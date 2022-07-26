@@ -17,22 +17,22 @@ Window::Window() : QWidget()
 
     // Création du layout de formulaire et de ses widgets
 
-    QPushButton *boutonRep1 = new QPushButton("Recherche dans la librairie", this);
-    QPushButton *boutonRep2 = new QPushButton("Sauvegarde de la librairie", this);
+    QPushButton *boutonSearch = new QPushButton("Recherche dans la librairie", this);
+    QPushButton *boutonSave = new QPushButton("Sauvegarde de la librairie", this);
 
     // Création du layout principal
     QGridLayout *layout = new QGridLayout;
-    layout->addWidget(boutonRep1, 0, 1, 1, 1);
-    layout->addWidget(boutonRep2, 1, 1, 1, 1);;
+    layout->addWidget(boutonSearch, 0, 1, 1, 1);
+    layout->addWidget(boutonSave, 1, 1, 1, 1);;
 
     setLayout(layout);
 
-    connect(boutonRep1, SIGNAL(clicked()), this, SLOT(choixRep1()));
-    connect(boutonRep2, SIGNAL(clicked()), this, SLOT(choixRep2()));
+    connect(boutonSearch, SIGNAL(clicked()), this, SLOT(selectSearch()));
+    connect(boutonSave, SIGNAL(clicked()), this, SLOT(selectSave()));
 
 }
 
-void Window::choixRep1()
+void Window::selectSearch()
 {
     secondWindow *second_window = new secondWindow;
     second_window->show();
@@ -70,7 +70,7 @@ void Window::choixRep1()
 
 }
 
-void Window::choixRep2()
+void Window::selectSave()
 {
 
 }

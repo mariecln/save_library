@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QFormLayout>
+#include <QtSql>
 
 using namespace std;
 
@@ -16,6 +17,7 @@ class secondWindow : public QWidget
 
     public:
     secondWindow();
+    void Result();
 
     private:
 

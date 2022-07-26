@@ -19,16 +19,10 @@ class Window : public QWidget // On hérite de QWidget (IMPORTANT)
     Window();
 
     public slots:
-    void choixRep1();
-    void choixRep2();
+    void selectSearch();
+    void selectSave();
 
     private:
-    QPushButton *m_boutonDialogue;
-    QString *main_repertoire;
-    QString *sort_repertoire;
-    QLabel *m_rep1;
-    QLabel *m_rep2;
-    int nbProgressBar;
     QSqlDatabase dbBook;
 
 };
