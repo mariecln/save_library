@@ -22,7 +22,7 @@ class Window : public QWidget // On hérite de QWidget (IMPORTANT)
     void selectSearch();
     void selectSave();
 
-    private:
+    protected:
     QSqlDatabase dbBook;
 
 };

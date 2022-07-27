@@ -1,6 +1,8 @@
 #ifndef SECONDWINDOW_H
 #define SECONDWINDOW_H
 
+#include "mainWindow.h"
+
 #include <QApplication>
 #include <QWidget>
 #include <QPushButton>
@@ -8,10 +10,11 @@
 #include <QLineEdit>
 #include <QFormLayout>
 #include <QtSql>
+#include <QMessageBox>
 
 using namespace std;
 
-class secondWindow : public QWidget
+class secondWindow : public Window
 {
     Q_OBJECT
 
@@ -19,7 +22,12 @@ class secondWindow : public QWidget
     secondWindow();
     void Result();
 
+    private slots :
+    void on_pushButton_clicked();
+
     private:
+    QLineEdit *m_lineEdit_title;
+    QLineEdit *m_lineEdit_author;
 
 
 };

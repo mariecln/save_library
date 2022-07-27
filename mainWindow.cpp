@@ -36,38 +36,6 @@ void Window::selectSearch()
 {
     secondWindow *second_window = new secondWindow;
     second_window->show();
-
-    if(dbBook.open()) {
-        qDebug() << "Ok - ouverture de la base de donnée";
-
-        // Exécution d'une requête
-        QSqlQuery requete;
-        if(requete.exec("SELECT * FROM Meteo")) {
-            qDebug() << "Ok - requete";
-
-            // Boucle qui permet de parcourir les enregistrements renvoyés par la requête
-            while(requete.next()) {
-                // On accède ici aux différents champs par leurs noms, il est également possible
-                // d'y accéder par leur index : requete.value(0)
-                qDebug() << requete.value("Date") << " " << requete.value("Temp1") << " "
-                << requete.value("Temp2") << " " << requete.value("Pression")
-                << requete.value("Humidite ");
-            }
-        }
-        else {
-            qDebug() << "Echec de la requête";
-            // La méthode lastError permet d'afficher un message
-            // plus explicite sur les causes de l'erreur
-            qDebug() << requete.lastError();
-        }
-        dbBook.close(); // Fermeture de la base de données
-    }
-
-    else {
-        qDebug() << "Echec d'ouverture de la base de donnée";
-        qDebug() << dbBook.lastError();
-    }
-
 }
 
 void Window::selectSave()
